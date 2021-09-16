@@ -2,4 +2,4 @@
 
 import car_image from '../assets/images/car.jpg';
 
-export const images = { car_image };
+export const images: Record<string, string> = { car_image };
