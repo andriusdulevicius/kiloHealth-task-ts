@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { Link } from 'gatsby';
 
 import { useRouter } from 'apis/history';
-
+import { white } from 'styles/colors';
 import {
   Button,
   PrimaryButton,
@@ -22,7 +22,6 @@ import {
   ContainerSmall,
   FlexWrapper,
 } from 'components';
-import { white } from 'styles/colors';
 
 const Checkout = () => {
   const { isMobile, isTablet } = useQuery();

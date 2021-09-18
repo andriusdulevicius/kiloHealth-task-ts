@@ -22,3 +22,4 @@ export * from './texts/Texts';
 // Wrappers
 
 export * from './wrappers/Container';
+export * from './wrappers/Wrapper';
