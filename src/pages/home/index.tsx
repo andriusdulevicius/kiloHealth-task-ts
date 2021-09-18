@@ -4,6 +4,7 @@ import { useQuery } from 'styles/breakpoints';
 import { primary, lightYellow, darkGray, lightGray } from 'styles/colors';
 import {
   MainBody,
+  ProgramSection,
   Button,
   Image,
   TextBase,
@@ -32,6 +33,7 @@ const Home = () => {
       <Logo />
       <Container>
         <Header />
+        <ProgramSection />
       </Container>
     </MainBody>
   );

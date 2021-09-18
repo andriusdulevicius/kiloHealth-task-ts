@@ -26,3 +26,7 @@ export * from './texts/Texts';
 export * from './wrappers/Container';
 export * from './wrappers/Wrapper';
 export * from './wrappers/MainHeader';
+
+// Big Components
+
+export * from './programSection/ProgramSection';
