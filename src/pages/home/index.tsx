@@ -1,11 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useRouter } from 'apis/history';
+import { useQuery } from 'styles/breakpoints';
+import { primary, lightYellow, darkGray, lightGray } from 'styles/colors';
+import {
+  MainBody,
+  Button,
+  Image,
+  TextBase,
+  TextBaseBold,
+  H1,
+  H2,
+  H3,
+  RegularText,
+  SmallText,
+  CaptionText,
+  Container,
+  ContainerSmall,
+  FlexWrapper,
+  MainHeader,
+} from 'components';
+import { Discount, Logo, Header } from 'elements';
 
-const Landing = () => (
-  <div>
-    <h1>home</h1>
-  </div>
-);
+const Home = () => {
+  const { isMobile, isTablet } = useQuery();
 
-export default Landing;
+  // Linka naudojam renderyje, useRouteri naudojame funkcijose
+
+  return (
+    <MainBody>
+      <Discount />
+      <Logo />
+      <Container>
+        <Header />
+      </Container>
+    </MainBody>
+  );
+};
+
+export default Home;

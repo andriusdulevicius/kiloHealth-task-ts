@@ -18,6 +18,23 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Raleway',
+              variants: ['300', '400', '500', '700'],
+            },
+            {
+              family: 'Roboto',
+              variants: ['300', '400', '500', '700'],
+            },
+          ],
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-resolve-src',
       options: {
         srcPath: path.resolve(__dirname, 'src'),

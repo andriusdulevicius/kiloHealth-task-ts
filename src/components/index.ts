@@ -1,8 +1,10 @@
+//Body
+
+export * from './body/MainBody';
+
 //Buttons
 
 export * from './buttons/Button';
-export * from './buttons/PrimaryButton';
-export * from './buttons/SecondaryButton';
 
 //Images
 
@@ -23,3 +25,4 @@ export * from './texts/Texts';
 
 export * from './wrappers/Container';
 export * from './wrappers/Wrapper';
+export * from './wrappers/MainHeader';
