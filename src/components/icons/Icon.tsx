@@ -9,6 +9,7 @@ interface Styles {
   minWidth?: string;
   width?: string;
   height?: string;
+  fontSize?: string;
 }
 
 export const Icon = styled.span<Styles>`
@@ -20,4 +21,5 @@ export const Icon = styled.span<Styles>`
   max-width: ${({ minWidth }) => minWidth || ''};
   width: ${({ width }) => width || '100%'};
   height: ${({ height }) => height || '100%'};
+  font-size: ${({ fontSize }) => fontSize || '1rem'};
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { white } from 'styles/colors';
 import { icons } from 'utils/icons';
 import Countdown from 'react-countdown';
-import { Icon } from '../../components/icons/Icon';
+import { Icon } from '../../../../components/icons/Icon';
 
 export const Discount = () => {
   const CompletionList = () => <span style={{ color: 'red' }}>No longer valid!</span>;

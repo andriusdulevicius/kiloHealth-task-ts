@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H1 } from './../../components/texts/Headings';
+import { H1 } from '../../../../components/texts/Headings';
 
 export const Header = () => {
   return (

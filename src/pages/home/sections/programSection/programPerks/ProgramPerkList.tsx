@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { H2 } from 'components';
-import { laptop } from 'styles/breakpoints';
+import { useQuery } from 'styles/breakpoints';
 import { PerkItem } from './PerkItem';
 
-export const ProgramPerksList = () => {
+export const ProgramPerksList: React.FC = () => {
+  const { isLaptop } = useQuery();
   // sample data
   const perks = [
     {
@@ -44,10 +45,9 @@ export const ProgramPerksList = () => {
     },
   ];
   return (
-    <StyledList>
-      <H2>Whats in our program? </H2>
+    <StyledList isLaptop={isLaptop}>
+      <H2 fontWeight={600}>Whats in our program? </H2>
       <ul>
-        {/* dynamic li generation */}
         {perks.map((perk) => (
           <PerkItem perk={perk} key={perk.title} />
         ))}
@@ -56,10 +56,11 @@ export const ProgramPerksList = () => {
   );
 };
 
-const StyledList = styled.div`
+const StyledList = styled.div<{ isLaptop: boolean }>`
+  min-width: ${({ isLaptop }) => (!isLaptop ? '50%' : '100%')};
   & ul {
-    margin: 0;
-    margin-top: ${laptop ? '0rem' : '1rem'};
+    margin: ${({ isLaptop }) => (!isLaptop ? '0 0' : '1rem 0 0 0')};
     padding: 0;
+    list-style: none;
   }
 `;

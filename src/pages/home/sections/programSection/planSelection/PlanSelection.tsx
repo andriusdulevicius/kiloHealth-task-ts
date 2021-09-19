@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { PlanCard } from './PlanCard';
-import { images } from 'utils/images';
 import { H2, Button, SmallText, Image } from 'components';
-import { primary } from 'styles/colors';
+import { primary, black } from 'styles/colors';
 
 export const PlanSelection: React.FC = () => {
   const [checkedPlan, setCheckedPlan] = useState<number>(0);
@@ -34,14 +33,16 @@ export const PlanSelection: React.FC = () => {
 
   return (
     <PlansSection>
-      <H2>
-        Choose your plan and get <span>7 days free trial</span>
+      <H2 fontWeight={600}>
+        Choose your plan and get <Highlight>7 days free trial</Highlight>
       </H2>
       {membershipPlans.map((onePlan) => (
         <PlanCard plan={onePlan} key={onePlan.id} checkedPlan={checkedPlan} setCheckedPlan={setCheckedPlan} />
       ))}
-      <Button>Get your plan</Button>
-      <div>
+      <Button width='100%' margin='1rem 0'>
+        Get your plan
+      </Button>
+      <Agreement>
         <SmallText>
           Your free trial will automatically become a paid subscription on the 8th day after you begin your trial. to
           cancel your subscription, please contact us at least 24 hours before the end of the trial period.
@@ -49,17 +50,21 @@ export const PlanSelection: React.FC = () => {
         <SmallText>
           By choosing a payment method you agree to the <a href='/'>T&amp;Cs</a> and <a href='/'>Privacy Policy</a>
         </SmallText>
-        <Image src={images.safe_checkout} />
-      </div>
+        <Image src='safe_checkout' />
+      </Agreement>
     </PlansSection>
   );
 };
 
 const PlansSection = styled.div`
-  & span {
-    color: ${primary};
+  & img {
+    margin-top: 1rem;
   }
-  & div {
-    text-align: center;
-  }
+`;
+
+const Highlight = styled.span`
+  color: ${primary};
+`;
+const Agreement = styled.div`
+  text-align: center;
 `;

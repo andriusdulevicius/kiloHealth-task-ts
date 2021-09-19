@@ -10,6 +10,10 @@ export * from './buttons/Button';
 
 export * from './images/Image';
 
+//Icons
+
+export * from './icons/Icon';
+
 //TextBase
 export * from './texts/TextBase';
 
@@ -24,9 +28,5 @@ export * from './texts/Texts';
 // Wrappers
 
 export * from './wrappers/Container';
-export * from './wrappers/Wrapper';
+export * from './wrappers/FlexWrapper';
 export * from './wrappers/MainHeader';
-
-// Big Components
-
-export * from './programSection/ProgramSection';

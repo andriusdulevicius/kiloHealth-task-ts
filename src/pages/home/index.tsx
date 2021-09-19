@@ -1,38 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
-import { useQuery } from 'styles/breakpoints';
-import { primary, lightYellow, darkGray, lightGray } from 'styles/colors';
-import {
-  MainBody,
-  ProgramSection,
-  Button,
-  Image,
-  TextBase,
-  TextBaseBold,
-  H1,
-  H2,
-  H3,
-  RegularText,
-  SmallText,
-  CaptionText,
-  Container,
-  ContainerSmall,
-  FlexWrapper,
-  MainHeader,
-} from 'components';
-import { Discount, Logo, Header } from 'elements';
+import { MainBody, Container } from 'components';
+import { Discount, Logo, Header } from 'pages/home/elements';
+import { SuccessStories, ProgramSection, YogaProsSection, Faq } from 'pages/home/sections';
 
 const Home = () => {
-  const { isMobile, isTablet } = useQuery();
-
-  // Linka naudojam renderyje, useRouteri naudojame funkcijose
-
   return (
     <MainBody>
       <Discount />
       <Logo />
       <Container>
         <Header />
+        <ProgramSection />
+        <SuccessStories />
+        <YogaProsSection />
+        <Faq />
         <ProgramSection />
       </Container>
     </MainBody>

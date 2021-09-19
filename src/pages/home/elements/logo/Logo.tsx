@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { icons } from 'utils/icons';
-import { Icon } from '../../components/icons/Icon';
-import { lightGray } from '../../styles/colors';
+import { Icon } from '../../../../components/icons/Icon';
+import { lightGray } from '../../../../styles/colors';
 
 export const Logo = () => {
   return (

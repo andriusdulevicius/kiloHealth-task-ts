@@ -6,13 +6,15 @@ import { useQuery } from 'styles/breakpoints';
 
 export const ProgramSection: React.FC = () => {
   const { isLaptop } = useQuery();
-  const ProgramSec = styled.div`
-    display: ${!isLaptop ? 'flex' : 'block'};
-  `;
+
   return (
-    <ProgramSec>
+    <ProgramSec isLaptop={isLaptop}>
       <PlanSelection />
       <ProgramPerksList />
     </ProgramSec>
   );
 };
+
+const ProgramSec = styled.div<{ isLaptop: boolean }>`
+  display: ${({ isLaptop }) => (!isLaptop ? 'flex' : 'block')};
+`;
