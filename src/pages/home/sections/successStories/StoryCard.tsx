@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { lightGray } from 'styles/colors';
-import { ContainerSmall, H3, Image, RegularText } from 'components';
 import { Ratings } from 'pages/home/elements';
 import { useQuery } from 'styles/breakpoints';
+import { ContainerSmall, H4, Image, RegularText, TextBase } from 'components';
+import { lightGray, darkGray } from 'styles/colors';
 
 interface IProps {
   story: {
@@ -16,18 +16,19 @@ interface IProps {
   };
 }
 
-export const StoryCard: React.FC<IProps> = (props) => {
+export const StoryCard: React.FC<IProps> = ({ story: { name, age, location, rating, imgUrl, story } }) => {
   const { isLaptop } = useQuery();
-  const { name, age, location, rating, imgUrl, story } = props.story;
   return (
     <ContainerSmall>
       <Card isLaptop={isLaptop}>
-        <H3>
+        <H4 fontWeight={600} margin='0'>
           {name}, {age}
-        </H3>
-        <h5>{location}</h5>
+        </H4>
+        <TextBase margin='0 0 1rem 0' color={darkGray}>
+          {location}
+        </TextBase>
         <Ratings rating={rating} />
-        <Image height='6.25rem' margin='1rem 0 0 0' src={imgUrl} />
+        <Image src={imgUrl} />
         <RegularText>{story}</RegularText>
       </Card>
     </ContainerSmall>
@@ -35,23 +36,16 @@ export const StoryCard: React.FC<IProps> = (props) => {
 };
 
 const Card = styled.div<{ isLaptop: boolean }>`
-  text-align: left;
-  padding: 1rem;
-  box-shadow: 0.35rem 0.35rem 0.35rem 0.35rem ${lightGray};
-  border-radius: 0.8rem;
   margin: 2rem auto;
+  padding: 1rem;
   min-height: ${({ isLaptop }) => (!isLaptop ? '44rem' : '')};
-
-  & h5 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-weight: normal;
-    font-size: 0.7rem;
-  }
+  border-radius: 0.8rem;
+  box-shadow: 0.35rem 0.35rem 0.35rem 0.35rem ${lightGray};
+  text-align: left;
 
   & img {
+    margin: 1rem 0;
     height: 15rem;
     object-fit: cover;
-    margin-bottom: 1rem;
   }
 `;

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexWrapper } from '../../../../../components/wrappers/FlexWrapper';
-import { Icon } from '../../../../../components/icons/Icon';
 import { icons } from 'utils/icons';
+import { TextBase, TextBaseBold, Icon, FlexWrapper } from 'components';
 import { darkGray } from 'styles/colors';
 
 interface Perk {
@@ -12,12 +11,16 @@ interface Perk {
 export const PerkItem = ({ perk }: Perk) => {
   return (
     <StyledPerkItem>
-      <FlexWrapper justifyContent='start' flexWrap='no-wrap'>
-        <Icon width='4.2rem' height='4rem' margin={'0 1.3rem 0 0'} background={icons[perk.icon]}></Icon>
-        <div>
-          <h4>{perk.title}</h4>
-          <span>{perk.subtitle}</span>
-        </div>
+      <FlexWrapper justifyContent='start' flexWrap='no-wrap' gap='1rem' padding='0'>
+        <Icon width='4rem' height='4rem' background={icons[perk.icon]}></Icon>
+        <PerkInfoContainer>
+          <TextBaseBold margin='0' fontSize='1rem'>
+            {perk.title}
+          </TextBaseBold>
+          <TextBase margin='0' color={darkGray} fontSize='0.9rem'>
+            {perk.subtitle}
+          </TextBase>
+        </PerkInfoContainer>
       </FlexWrapper>
     </StyledPerkItem>
   );
@@ -25,18 +28,8 @@ export const PerkItem = ({ perk }: Perk) => {
 
 const StyledPerkItem = styled.li`
   margin-bottom: 0.5rem;
+`;
 
-  & div:last-child {
-    width: 100%;
-  }
-
-  & h4 {
-    font-size: 0.8rem;
-    margin: 0.2rem 0;
-  }
-
-  & span {
-    font-size: 0.8rem;
-    color: ${darkGray};
-  }
+const PerkInfoContainer = styled.div`
+  max-width: 70%;
 `;

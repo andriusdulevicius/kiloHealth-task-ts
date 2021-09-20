@@ -1,57 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexWrapper, H2, Icon } from 'components';
-import { icons } from 'utils/icons';
 import { useQuery } from 'styles/breakpoints';
+import { icons } from 'utils/icons';
+import { FlexWrapper, H3, Icon, H4, TextBase, Container } from 'components';
+
+const YOGA_PROS = [
+  'Each program adapts to your age or fitness level',
+  'Mindful way to exercise and get real results',
+  'Effective and long-term lasting results',
+  'Suited activities that benefit both the mind and body',
+  'Low-intensity but highly-effective workouts',
+  'Extra attention to muscle, joint and back health',
+];
 
 export const PositiveYogaList: React.FC = () => {
   const { isLaptop } = useQuery();
-  // sample data
-  const yogaPros = [
-    'Each program adapts to your age or fitness level',
-    'Mindful way to exercise and get real results',
-    'Effective and long-term lasting results',
-    'Suited activities that benefit both the mind and body',
-    'Low-intensity but highly-effective workouts',
-    'Extra attention to muscle, joint and back health',
-  ];
 
   return (
-    <YogaList isLaptop={isLaptop}>
-      <H2 fontWeight={600}>Is Positive Yoga right for me?</H2>
-      <ul>
-        {yogaPros.map((oneAdv, index) => (
-          <li key={index}>
+    <Container maxWidth='25rem' padding='0'>
+      <H3 fontWeight={700}>Is Positive Yoga right for me?</H3>
+      <StyledList>
+        {YOGA_PROS.map((oneAdv, index) => (
+          <StyledListItem key={index} isLaptop={isLaptop}>
             <FlexWrapper justifyContent='left' flexWrap='no-wrap' padding='0rem'>
-              <Icon
-                background={icons.check_circle_outline}
-                width='1.4rem'
-                height='1.4rem'
-                padding='0 1.5rem 0 0'
-              ></Icon>
-              <h5>{oneAdv}</h5>
+              <Icon background={icons.check_circle_outline} width='10%' height='1.4rem'></Icon>
+              <TextBase fontSize={!isLaptop ? '1.1rem' : '1rem'} margin='0.5rem'>
+                {oneAdv}
+              </TextBase>
             </FlexWrapper>
-          </li>
+          </StyledListItem>
         ))}
-      </ul>
-    </YogaList>
+      </StyledList>
+    </Container>
   );
 };
 
-const YogaList = styled.div<{ isLaptop: boolean }>`
-  width: ${({ isLaptop }) => (!isLaptop ? '50%' : '100%')};
-  & ul {
-    list-style: none;
-    margin-top: 1rem;
-    padding: 0;
-  }
-  & li {
-    line-height: ${({ isLaptop }) => (!isLaptop ? '2.3rem' : '2rem')};
+const StyledList = styled.ul`
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+`;
 
-    & h5 {
-      font-weight: normal;
-      font-size: ${({ isLaptop }) => (!isLaptop ? '1.5rem' : '1.3rem')};
-      margin: 0.5rem;
-    }
-  }
+const StyledListItem = styled.li<{ isLaptop: boolean }>`
+  line-height: ${({ isLaptop }) => (!isLaptop ? '1.5rem' : '1.1rem')};
 `;

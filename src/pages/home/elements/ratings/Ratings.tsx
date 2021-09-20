@@ -21,6 +21,7 @@ const StyledRating = styled.div`
   color: ${lightYellow};
   & i {
     font-size: 1.2rem;
-    margin: 0 0.3rem 0.5rem 0;
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
   }
 `;

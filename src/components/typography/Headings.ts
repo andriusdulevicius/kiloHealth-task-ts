@@ -13,3 +13,7 @@ export const H3 = styled(TextBase).attrs({ as: 'h3' })`
   font-size: 1.5rem;
   line-height: 2rem;
 `;
+export const H4 = styled(TextBase).attrs({ as: 'h4' })`
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+`;

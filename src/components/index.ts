@@ -15,15 +15,15 @@ export * from './images/Image';
 export * from './icons/Icon';
 
 //TextBase
-export * from './texts/TextBase';
+export * from './typography/TextBase';
 
 //Headings
 
-export * from './texts/Headings';
+export * from './typography/Headings';
 
 //Texts
 
-export * from './texts/Texts';
+export * from './typography/Texts';
 
 // Wrappers
 

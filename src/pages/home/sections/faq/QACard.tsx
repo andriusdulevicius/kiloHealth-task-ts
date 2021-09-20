@@ -1,7 +1,7 @@
-import { FlexWrapper, H3 } from 'components';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import 'font-awesome/css/font-awesome.css';
+import { FlexWrapper, RegularText, H4 } from 'components';
 import { lightGray } from 'styles/colors';
 
 interface IProps {
@@ -21,22 +21,24 @@ export const QACard: React.FC<IProps> = ({ QA }) => {
 
   return (
     <Card answerState={answerState} onClick={answerShowHandler}>
-      <FlexWrapper justifyContent='space-between' flexWrap='no-wrap'>
-        <H3>{question}</H3>
+      <FlexWrapper justifyContent='space-between' flexWrap='no-wrap' padding='0'>
+        <H4 fontWeight={600}>{question}</H4>
         <i className={!answerState ? 'fa fa-angle-down' : 'fa fa-angle-up'}></i>
       </FlexWrapper>
-      {/* dynamic answer reveal */}
-      <p>{answer}</p>
+      <RegularText margin='0' textAlign='left'>
+        {answer}
+      </RegularText>
     </Card>
   );
 };
 
 const Card = styled.div<{ answerState: boolean }>`
+  margin: 1rem auto;
+  padding: 1rem;
+  max-height: ${({ answerState }) => (answerState ? '40rem' : '4rem')};
+  max-width: 50rem;
   border: 0.06rem solid ${lightGray};
   border-radius: 1rem;
-  padding: 0.7rem;
-  margin: 1rem 0;
-  min-height: 4.4rem;
   transition: all 1s ease;
 
   & i {
@@ -44,8 +46,6 @@ const Card = styled.div<{ answerState: boolean }>`
   }
 
   & p {
-    padding: 0.7rem;
-    max-height: ${({ answerState }) => (answerState ? '40rem' : 0)};
     opacity: ${({ answerState }) => (answerState ? 1 : 0)};
     overflow: ${({ answerState }) => (answerState ? 'visible' : 'hidden')};
     transition: all 1s ease;

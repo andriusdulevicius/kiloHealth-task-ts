@@ -12,6 +12,7 @@ interface Styles {
   border?: string;
   borderRadius?: string;
   fontSize?: string;
+  fontWeight?: number;
 }
 
 export const Button = styled.button<Styles>`
@@ -26,5 +27,6 @@ export const Button = styled.button<Styles>`
   border-radius: ${({ borderRadius }) => borderRadius || '0.5rem'};
   color: ${({ color }) => color || white};
   font-size: ${({ fontSize }) => fontSize || 'inherit'};
+  font-weight: ${({ fontWeight }) => fontWeight || 400};
   cursor: 'pointer';
 `;

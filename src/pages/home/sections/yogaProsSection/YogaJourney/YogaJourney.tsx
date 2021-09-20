@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H2, Image } from 'components';
 import { useQuery } from 'styles/breakpoints';
+import { H3, Image } from 'components';
 
 export const YogaJourney: React.FC = () => {
   const { isLaptop } = useQuery();
   return (
     <StyledYogaJourney isLaptop={isLaptop}>
-      <H2 fontWeight={600}>Start your yoga journey now!</H2>
+      <H3 fontWeight={700}>Start your yoga journey now!</H3>
       <Image src='phone' />
     </StyledYogaJourney>
   );
