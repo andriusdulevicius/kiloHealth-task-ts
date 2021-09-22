@@ -1,7 +1,3 @@
-//Body
-
-export * from './body/MainBody';
-
 //Buttons
 
 export * from './buttons/Button';
@@ -9,10 +5,7 @@ export * from './buttons/Button';
 //Images
 
 export * from './images/Image';
-
-//Icons
-
-export * from './icons/Icon';
+export * from './images/Svg';
 
 //TextBase
 export * from './typography/TextBase';
@@ -30,3 +23,10 @@ export * from './typography/Texts';
 export * from './wrappers/Container';
 export * from './wrappers/FlexWrapper';
 export * from './wrappers/MainHeader';
+
+// Items
+
+export * from './items/Timer';
+// Routes
+
+export * from './Route';

@@ -1,7 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import 'font-awesome/css/font-awesome.css';
-import { lightYellow } from 'styles/colors';
+import { Svg } from 'components';
 
 interface IProps {
   rating: number;
@@ -9,19 +7,10 @@ interface IProps {
 
 export const Ratings: React.FC<IProps> = ({ rating }) => {
   return (
-    <StyledRating>
-      {[...Array(rating)].map((val, index) => (
-        <i key={index} className='fa fa-star'></i>
+    <>
+      {[...Array(rating)].map((val, index: number) => (
+        <Svg src='mdi_star' key={index} />
       ))}
-    </StyledRating>
+    </>
   );
 };
-
-const StyledRating = styled.div`
-  color: ${lightYellow};
-  & i {
-    font-size: 1.2rem;
-    margin-top: 0.3rem;
-    margin-right: 0.5rem;
-  }
-`;

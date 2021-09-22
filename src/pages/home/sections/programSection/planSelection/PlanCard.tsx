@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
-import { FlexWrapper, Icon, Container, H2, H4, SmallText } from 'components';
-import { icons } from 'utils/icons';
+import { FlexWrapper, Container, H2, H4, SmallText, Svg } from 'components';
 import { primary, lightGray, black, lightYellow, white } from 'styles/colors';
 
 interface IProps {
@@ -52,12 +51,7 @@ export const PlanCard: React.FC<IProps> = ({
           )}
         </Container>
         <Container margin='0' padding='0'>
-          <Icon
-            display='inline-block'
-            width='1.4rem'
-            height='1.4rem'
-            background={checkedPlan === id ? icons.check_circle_orange : icons.circle}
-          ></Icon>
+          <Svg src={checkedPlan === id ? 'check_circle_orange' : 'circle'} />
         </Container>
       </FlexWrapper>
     </Card>

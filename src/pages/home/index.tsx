@@ -1,11 +1,11 @@
 import React from 'react';
-import { MainBody, Container } from 'components';
+import { Container } from 'components';
 import { Discount, Logo, Header } from 'pages/home/elements';
 import { SuccessStories, ProgramSection, YogaProsSection, Faq } from 'pages/home/sections';
 
 const Home = () => {
   return (
-    <MainBody>
+    <>
       <Discount />
       <Logo />
       <Container>
@@ -16,7 +16,7 @@ const Home = () => {
         <Faq />
         <ProgramSection />
       </Container>
-    </MainBody>
+    </>
   );
 };
 

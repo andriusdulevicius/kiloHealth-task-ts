@@ -26,7 +26,7 @@ const Img = styled.img<Styles>`
   height: ${({ height }) => height || '100%'};
 `;
 
-export const Image: React.FC<Props> = ({ src }) => {
+export const Image: React.FC<Props> = ({ src, ...rest }) => {
   useEffect(() => {
     forceVisible();
   }, []);
@@ -34,7 +34,7 @@ export const Image: React.FC<Props> = ({ src }) => {
   return !images[src] ? null : (
     <LazyLoad once>
       <picture>
-        <Img src={images[src]} alt={images[src]} />
+        <Img src={images[src]} alt={images[src]} {...rest} />
       </picture>
     </LazyLoad>
   );

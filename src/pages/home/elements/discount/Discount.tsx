@@ -3,15 +3,15 @@ import Countdown from 'react-countdown';
 import styled from 'styled-components';
 import { white, lightBlue } from 'styles/colors';
 import { icons } from 'utils/icons';
-import { Icon, RegularText, FlexWrapper, BoldedSpan } from 'components';
+import { RegularText, FlexWrapper, BoldedSpan, Svg } from 'components';
 
 export const Discount = () => {
   const CompletionList = () => <span style={{ color: 'red' }}>No longer valid!</span>;
 
   return (
     <DiscountSection>
-      <FlexWrapper flexWrap='no-wrap'>
-        <Icon display='inline-block' background={icons.badge} width='1.3rem' height='1.3rem' />
+      <FlexWrapper flexWrap='no-wrap' padding='1rem 0'>
+        <Svg src='badge' />
         <RegularText color={white}>
           50% discount only valid for
           <BoldedSpan>

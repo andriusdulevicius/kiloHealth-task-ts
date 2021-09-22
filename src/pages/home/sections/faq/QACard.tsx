@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import 'font-awesome/css/font-awesome.css';
-import { FlexWrapper, RegularText, H4 } from 'components';
+import { FlexWrapper, RegularText, H4, Svg } from 'components';
 import { lightGray } from 'styles/colors';
 
 interface IProps {
@@ -12,7 +12,7 @@ interface IProps {
 }
 
 export const QACard: React.FC<IProps> = ({ QA }) => {
-  const [answerState, setAnswerState] = useState(false);
+  const [answerState, setAnswerState] = useState<boolean>(false);
   const { question, answer } = QA;
 
   const answerShowHandler = () => {
@@ -23,7 +23,7 @@ export const QACard: React.FC<IProps> = ({ QA }) => {
     <Card answerState={answerState} onClick={answerShowHandler}>
       <FlexWrapper justifyContent='space-between' flexWrap='no-wrap' padding='0'>
         <H4 fontWeight={600}>{question}</H4>
-        <i className={!answerState ? 'fa fa-angle-down' : 'fa fa-angle-up'}></i>
+        <Svg src={!answerState ? 'expand_more' : 'expand_less'} />
       </FlexWrapper>
       <RegularText margin='0' textAlign='left'>
         {answer}

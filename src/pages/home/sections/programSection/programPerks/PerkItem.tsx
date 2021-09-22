@@ -1,24 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import { icons } from 'utils/icons';
-import { TextBase, TextBaseBold, Icon, FlexWrapper } from 'components';
+import { TextBase, TextBaseBold, Svg, FlexWrapper } from 'components';
 import { darkGray } from 'styles/colors';
+import { icons } from 'utils/icons';
 
 interface Perk {
-  perk: { icon: string; title: string; subtitle: string };
+  perk: { icon: keyof typeof icons; title: string; subtitle: string };
 }
 
-export const PerkItem = ({ perk }: Perk) => {
+export const PerkItem: React.FC<Perk> = ({ perk: { title, subtitle, icon } }) => {
   return (
     <StyledPerkItem>
       <FlexWrapper justifyContent='start' flexWrap='no-wrap' gap='1rem' padding='0'>
-        <Icon width='4rem' height='4rem' background={icons[perk.icon]}></Icon>
+        <Svg src={icon} width='3rem' />
         <PerkInfoContainer>
           <TextBaseBold margin='0' fontSize='1rem'>
-            {perk.title}
+            {title}
           </TextBaseBold>
           <TextBase margin='0' color={darkGray} fontSize='0.9rem'>
-            {perk.subtitle}
+            {subtitle}
           </TextBase>
         </PerkInfoContainer>
       </FlexWrapper>

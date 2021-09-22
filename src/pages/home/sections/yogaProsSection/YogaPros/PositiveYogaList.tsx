@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
-import { icons } from 'utils/icons';
-import { FlexWrapper, H3, Icon, H4, TextBase, Container } from 'components';
+import { FlexWrapper, H3, Svg, H4, TextBase, Container } from 'components';
 
 const YOGA_PROS = [
   'Each program adapts to your age or fitness level',
@@ -20,10 +19,10 @@ export const PositiveYogaList: React.FC = () => {
     <Container maxWidth='25rem' padding='0'>
       <H3 fontWeight={700}>Is Positive Yoga right for me?</H3>
       <StyledList>
-        {YOGA_PROS.map((oneAdv, index) => (
+        {YOGA_PROS.map((oneAdv, index: number) => (
           <StyledListItem key={index} isLaptop={isLaptop}>
             <FlexWrapper justifyContent='left' flexWrap='no-wrap' padding='0rem'>
-              <Icon background={icons.check_circle_outline} width='10%' height='1.4rem'></Icon>
+              <Svg src='check_circle_outline' />
               <TextBase fontSize={!isLaptop ? '1.1rem' : '1rem'} margin='0.5rem'>
                 {oneAdv}
               </TextBase>
@@ -36,9 +35,9 @@ export const PositiveYogaList: React.FC = () => {
 };
 
 const StyledList = styled.ul`
-  list-style: none;
   margin-top: 1rem;
   padding: 0;
+  list-style: none;
 `;
 
 const StyledListItem = styled.li<{ isLaptop: boolean }>`

@@ -10,8 +10,11 @@ import plan from '../assets/icons/plan.svg';
 import shoe from '../assets/icons/shoe.svg';
 import smartwatch from '../assets/icons/smartwatch.svg';
 import whistle from '../assets/icons/whistle.svg';
+import mdi_star from '../assets/icons/mdi_star.svg';
+import expand_less from '../assets/icons/expand_less.svg';
+import expand_more from '../assets/icons/expand_more.svg';
 
-export const icons: Record<string, string> = {
+export const icons = {
   badge,
   bookcheck,
   check_circle_orange,
@@ -24,4 +27,7 @@ export const icons: Record<string, string> = {
   shoe,
   smartwatch,
   whistle,
+  mdi_star,
+  expand_less,
+  expand_more,
 };

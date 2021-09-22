@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PerkItem } from './PerkItem';
-import { useQuery } from 'styles/breakpoints';
 import { Container, H3 } from 'components';
 
 // sample data
@@ -44,11 +43,10 @@ const PERKS = [
 ];
 
 export const ProgramPerksList: React.FC = () => {
-  const { isLaptop } = useQuery();
   return (
-    <Container maxWidth='25rem' padding='0'>
+    <Container maxWidth='25rem' padding='0' margin='1rem 0'>
       <H3 fontWeight={700}>Whats in our program? </H3>
-      <StyledList isLaptop={isLaptop}>
+      <StyledList>
         {PERKS.map((perk) => (
           <PerkItem perk={perk} key={perk.title} />
         ))}
@@ -57,9 +55,8 @@ export const ProgramPerksList: React.FC = () => {
   );
 };
 
-const StyledList = styled.ul<{ isLaptop: boolean }>`
-  margin: 0;
-  margin-top: ${({ isLaptop }) => (!isLaptop ? '0' : '1rem')};
+const StyledList = styled.ul`
+  margin-top: '1rem';
   padding: 0;
   list-style: none;
 `;

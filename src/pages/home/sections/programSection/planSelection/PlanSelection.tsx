@@ -39,7 +39,7 @@ export const PlanSelection: React.FC = () => {
       {MEMBERSHIP_PLANS.map((onePlan) => (
         <PlanCard plan={onePlan} key={onePlan.id} checkedPlan={checkedPlan} setCheckedPlan={setCheckedPlan} />
       ))}
-      <Button width='100%' margin='1rem 0' fontWeight={700}>
+      <Button width='100%' margin='1rem 0'>
         Get your plan
       </Button>
       <Container>
