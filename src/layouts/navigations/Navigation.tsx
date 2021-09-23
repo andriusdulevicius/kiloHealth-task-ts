@@ -15,7 +15,7 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
   ];
 
   return (
-    <Wrapper>
+    <NavWrapper>
       <Container>
         <FlexWrapper justifyContent='space-around' padding='1rem 0'>
           {PAGES_LINKS.map((p, index: number) => (
@@ -25,11 +25,11 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
           ))}
         </FlexWrapper>
       </Container>
-    </Wrapper>
+    </NavWrapper>
   );
 };
 
-const Wrapper = styled.div`
+const NavWrapper = styled.nav`
   background-color: ${primary};
 
   a {

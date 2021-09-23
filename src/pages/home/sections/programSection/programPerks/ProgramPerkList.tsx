@@ -2,9 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { PerkItem } from './PerkItem';
 import { Container, H3 } from 'components';
+import { icons } from 'utils/icons';
+
+interface Perk {
+  icon: keyof typeof icons;
+  title: string;
+  subtitle: string;
+}
 
 // sample data
-const PERKS = [
+const PERKS: Perk[] = [
   {
     icon: 'plan',
     title: 'A personalized yoga program',
